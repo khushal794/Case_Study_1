@@ -1,0 +1,259 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  
+    
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+   
+    
+  }
+  .photo{
+    display: flexbox;
+    align-items: center;
+    margin: 10% 30%;
+  }
+  .photo img{
+    width: 50%;
+    height: 50%;
+    
+   
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e7802c;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .logo img {
+    height: 60px;
+    padding:0 px;
+  }
+  .bank-info{
+    padding-left: 20px;
+  }
+  
+  .bank-info h1 {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .bank-info p {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+  
+ 
+  nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  nav li {
+    margin: 0 20px;
+    padding-left: 5px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #F7D200;
+  }
+  
+  .sidebar {
+    position: fixed;
+    top: 60%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 70px;
+    background-color: #e7802c;
+    padding: 10px 0;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sidebar li {
+    margin: 10px 0;
+  }
+
+  
+  .sidebar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar a:hover {
+    color: #F7D200;
+  }
+  
+
+ 
+  .sidebar ul li i img{
+    width: 50px;
+    height: 50px;
+  }
+
+  .sidebar-right{
+    flex-basis: 200px;
+    
+    position: fixed;
+    top: 60%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 70px;
+    background-color: #e7802c;
+    padding: 10px 0;
+  }
+
+  .sidebar-right ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar-right ul li{
+    margin: 10px 0;
+    padding: 2px;
+  }
+
+  .sidebar-right ul li i img{
+    width: 50px;
+    height: 50px;
+  }
+  .dropbtn img{
+    width: 50px;
+    height: 50px;
+  }
+  
+   .sidebar2 {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  }
+
+  .sidebar2 a {
+     padding: 8px 8px 8px 32px; 
+    text-decoration: none;
+   font-size: 25px; 
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  .sidebar2 a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidebar2 .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* The button used to open the sidebar */
+  .openbtn {
+    font-size: 10px;
+    cursor: pointer;
+    /* background-color: #111;*/
+    /* color: white;
+    padding: 10px 15px;
+    border: none;*/
+  } 
+  
+  .openbtn:hover {
+    background-color: #444;
+  } 
+
+
+  @media screen and (max-height: 450px) {
+    .sidebar2 {padding-top: 15px;}
+    .sidebar2 {padding-right: 15px;}
+    .sidebar2 a {font-size: 18px;}
+  }
+  
+  
+ 
+
+  .dropbtn {
+    
+    color: white;
+    
+    font-size: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+   /*Dropdown button on hover & focus */
+   .dropbtn:hover, .dropbtn:focus {
+    background-color: #d63a0a;
+   }
+  
+   
+ 
+  .dropdown {
+    
+    position: relative;
+    display: inline-block;
+    
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    right: 0;
+    display: block;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;
+   width: 500px;
+   height: 500px;
+
+  }

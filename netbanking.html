@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./Images/bank_logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="netbanking.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <title>RMB-NetBanking</title>
+</head>
+
+<body class="mybody">
+    <header>
+    <div class="logo">
+        <img src="./Images/bank_logo.png" alt="Bank Logo">
+    </div>
+    <div class="bank-info">
+        <h1>Rajsthan Marudhara Bank [RMB]</h1>
+        <p>Joint Venture of Govt. of India, Govt. of Rajasthan</p>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Personal Banking</a></li>
+            <li><a href="#">Corporate Banking</a></li>
+            <li><a href="#">Investor Relations</a></li>
+            <li><a href="netbanking.html">Net Banking</a>
+            </li>
+             
+            <li><a href="#">MSME Banking</a></li>
+           
+        </ul>
+    </nav>
+</header>
+    <div class="outer-container">
+        <div id="sidebar">
+            <li style="padding-top: 2rem;padding-bottom: 2rem;" id="myBtn">Online Banking</li>
+            <hr style="outline:none;border:1px solid #e7802c;">
+            <li style="padding-top: 2rem;padding-bottom: 2rem;">Online account opening</li>
+            <hr style="outline:none;border:1px solid #e7802c;">
+            <li style="padding-top: 2rem;padding-bottom: 2rem;">Online Payments</li>
+            <hr style="outline:none;border:1px solid #e7802c;">
+            <a href="./login.html">
+                <li style="padding-top: 2rem;padding-bottom: 2rem;">Online Services</li>
+            </a>
+            <hr style="outline:none;border:1px solid #e7802c;">
+            <li style="padding-top: 2rem;padding-bottom: 2rem;">Can digital New</li>
+            <hr style="outline:none;border:1px solid #e7802c;">
+            <li style="padding-top: 2rem;padding-bottom: 2rem;">Foreign Transaction</li>
+            <hr style="outline:none;border:1px solid #e7802c;">
+            <li style="padding-top: 2rem;padding-bottom: 2rem;">Service Request</li>
+            <hr style="outline:none;border:1px solid #e7802c;">
+            <li style="padding-top: 2rem;padding-bottom: 2rem;">Download The App</li>
+            </ul>
+        </div>
+        <div id="content">
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="https://images.pexels.com/photos/1602726/pexels-photo-1602726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        style="width:100%" >
+                    <div class="textAtBottom" style="font-size: large;">Always Remember That Password and PIN are
+                        the
+                        most confidential thing do not share it with anyone</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="https://images.pexels.com/photos/259200/pexels-photo-259200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        style="width:100%">
+                    <div class="textAtBottom" style="font-size: large;">Email address :
+                        info@rajasthanmarudharabank.com & Phone Number: +120-965432127</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="https://images.pexels.com/photos/45111/pexels-photo-45111.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        style="width:100%">
+                    <div class="textAtBottom">
+                        <button type="button"></button>
+                    </div>
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+            </div>
+            <br>
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <br><br>
+            <a href="savingaccount.html"><p style="background-color: #e7802c;padding: 1rem;color: white;">Open SB account</p>
+            <hr style="outline:none;border:1px solid white;"></a>
+            <p style="background-color: #e7802c;padding: 1rem;color: white;">Open PPF account</p>
+            <hr style="outline:none;border:1px solid white">
+            <p style="background-color: #e7802c;padding: 1rem;color: white;">Open APY account</p>
+        </div>
+
+    </div>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+
+
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

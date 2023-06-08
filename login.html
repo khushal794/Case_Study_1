@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./Images/bank_logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="netbanking.css">    
+    <title>RMB-Netbanking- Login</title>
+</head>
+
+<body onload="generateCaptcha()">
+    <header>
+        <div class="logo">
+            <img src="./Images/bank_logo.png" alt="Bank Logo">
+        </div>
+        <div class="bank-info">
+            <h1>Rajsthan Marudhara Bank [RMB]</h1>
+            <p>Joint Venture of Govt. of India, Govt. of Rajasthan</p>
+        </div>
+        <nav>
+            <ul><li><a href="index.html">Home</a></li>
+                <li><a href="#">Personal Banking</a></li>
+                <li><a href="#">Corporate Banking</a></li>
+                <li><a href="#">Investor Relations</a></li>
+                <li><a href="netbanking.html">Net Banking</a>
+                </li>
+                 
+                <li><a href="#">MSME Banking</a></li>
+               
+            </ul>
+        </nav>
+    </header>
+    <div class="sidebar">
+        <ul>
+            <li><a href="#"><i class="kfa-facebook"><img src="./Images/facebook-2935402_1280.png" alt="Facebook"></i></a></li>
+            <li><a href="#"><i class="kfa-twitter"><img src="./Images/twitter-2935414_1280.png" alt="twitter"></i></a></li>
+            <li><a href="#"><i class="kfa-instagram"><img src="./Images/instagram-3814048_1280.png" alt="Instagram"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/khushal-sharma-7169a31a7/"><i class="kfa-linkedin"><img src="./Images/linkedin-2935407_1280.png" alt="Linkedin"></i></a></li>
+            <li><a href="#"><i class="kfa-envelope"><img src="./Images/instagram-3814059_1280.png" alt="Gmail"></i></a></li>
+        </ul>
+    </div>
+    
+    <div class="login-box">
+        <h2>Welcome To Net banking</h2>
+        <div class="input-container">
+            <input class="input-field" type="text" placeholder="Enter User ID" name="usrId" id="userId">
+            <i class="fa fa-user icon" id="person"></i>
+        </div>
+        <small id="errMessUser" style="color: red;"></small>
+        <div class="input-container">
+            <input class="input-field" type="password" placeholder="Enter Password" id="password" name="password">
+            <i class="fa-solid fa-eye icon" id="eye"></i>
+        </div>
+        <small id="errMessPass" style="color: red;"></small>
+        <div class="input-container">
+            <input class="input-field" type="text" placeholder="Enter Captcha" id="inputCaptcha" name="captcha">
+            <i class="fa-solid fa-key icon" id="captIcon"></i>
+        </div>
+        <small id="errMessCapt" style="color: red;"></small>
+        <div class="input-container">
+            <del class="captcha" style="color:white" id="captcha"></del>
+        </div>
+        <div class="inout-container" style="margin-top: 2rem;">
+            <button class="button" onclick="validate()">Login</button>
+        </div>
+    </div>
+    <script>
+        const password = document.querySelector("#password")
+        const eye = document.querySelector("#eye")
+
+        eye.addEventListener("click", function () {
+            this.classList.toggle("fa-eye-slash")
+            const type = password.getAttribute("type") === "password" ? "text" : "password"
+            password.setAttribute("type", type)
+        })
+
+        function generateCaptcha() {
+
+            captcha = document.getElementById("captcha");
+            var uniqueChar = "";
+
+            const randomChar =
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+            // Generate captcha for length of
+            // 5 with random character
+            for (let i = 1; i < 5; i++) {
+                uniqueChar += randomChar.charAt(
+                    Math.random() * randomChar.length)
+            }
+
+            // Store generated input
+            captcha.innerHTML = uniqueChar;
+        }
+        function validate() {
+            const userId = document.getElementById("userId")
+            const password = document.getElementById("password")
+            const errMessUser = document.getElementById("errMessUser")
+            const errMessPass = document.getElementById("errMessPass")
+            const person = document.getElementById("person")
+            const captcha = document.getElementById("captcha")
+            const inputCaptcha = document.getElementById("inputCaptcha")
+            const errMessCapt = document.getElementById("errMessCapt")
+            const captIcon = document.getElementById("captIcon")
+
+            const eye = document.getElementById("eye")
+            if (!userId.value) {
+                userId.style.borderBottom = "1px solid red"
+                userId.style.borderTop = "1px solid red"
+                userId.style.borderLeft = "1px solid red"
+                person.style.borderBottom = "1px solid red"
+                person.style.borderTop = "1px solid red"
+                person.style.borderRight = "1px solid red"
+                errMessUser.innerHTML = "Please Fill The Required Fields."
+            }
+            if (!password.value) {
+                password.style.borderBottom = "1px solid red"
+                password.style.borderTop = "1px solid red"
+                password.style.borderLeft = "1px solid red"
+                eye.style.borderBottom = "1px solid red"
+                eye.style.borderTop = "1px solid red"
+                eye.style.borderRight = "1px solid red"
+                errMessPass.innerHTML = "Please Fill The Required Fields."
+            }
+            if(!inputCaptcha.value){
+                inputCaptcha.style.borderBottom = "1px solid red"
+                inputCaptcha.style.borderTop = "1px solid red"
+                inputCaptcha.style.borderLeft = "1px solid red"
+                captIcon.style.borderBottom = "1px solid red"
+                captIcon.style.borderTop = "1px solid red"
+                captIcon.style.borderRight = "1px solid red"
+                errMessCapt.innerHTML = "Please Fill The Required Fields."
+            }
+            const userIdRegex = /[0-9A-Za-z]/
+            if (userId.value.length > 6 && !userIdRegex.test(userId.value)) {
+                userId.style.borderBottom = "1px solid red"
+                userId.style.borderTop = "1px solid red"
+                userId.style.borderLeft = "1px solid red"
+                person.style.borderBottom = "1px solid red"
+                person.style.borderTop = "1px solid red"
+                person.style.borderRight = "1px solid red"
+                errMessUser.innerHTML = "Invalid Credentials !!!"
+            }
+            const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/
+            if (!passwordRegex.test(password.value)) {
+                password.style.borderBottom = "1px solid red"
+                password.style.borderTop = "1px solid red"
+                password.style.borderLeft = "1px solid red"
+                eye.style.borderBottom = "1px solid red"
+                eye.style.borderTop = "1px solid red"
+                eye.style.borderRight = "1px solid red"
+                errMessPass.innerHTML = "Invalid Credentials !!!"
+            }
+            if(inputCaptcha.value != captcha.innerText){
+                inputCaptcha.style.borderBottom = "1px solid red"
+                inputCaptcha.style.borderTop = "1px solid red"
+                inputCaptcha.style.borderLeft = "1px solid red"
+                captIcon.style.borderBottom = "1px solid red"
+                captIcon.style.borderTop = "1px solid red"
+                captIcon.style.borderRight = "1px solid red"
+                errMessCapt.innerHTML = "Invalid Captcha !!!"
+            }
+            alert("Logged In Successfully !!!")
+        }
+    </script>
+</body>
+
+</html>
